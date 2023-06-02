@@ -1,0 +1,93 @@
+*
+{
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+
+
+
+/* Containers Styling */
+.entryContainer 
+{
+    align-self: center;
+	background-color: #c7c5c5c5;
+	border-radius: 20px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			    0 10px 10px rgba(0,0,0,0.22);
+    position: fixed;
+    top: 200px; left: 575px;
+	width: 800px;
+	max-width: 100%;
+	min-height: 500px;
+}
+
+.formContainer
+{
+    padding: 5px;
+    border-radius: 25px;
+    font-family: sans-serif;
+}
+
+.formContainer h2 
+{
+	text-align: center;
+}
+
+/* Log In panel style */
+.logInCointainer
+{
+    max-width: 250px;
+    max-height: 350px;
+    padding: 20px;
+    /* 
+    top: 125px; left: 50px; */
+    box-shadow: 10px 0px 45px rgba(51, 95, 214, 0.349);
+	position: relative;
+    left: 65px;
+    top: 140px;
+}
+
+/* Sign Up panel style */
+.signUpCointainer
+{
+    width: 250px;
+    max-height: 350px;
+    padding: 20px;
+    box-shadow: -10px 0px 45px rgba(51, 95, 214, 0.349);
+
+    position: relative;
+    left: 465px;
+    top: -120px;
+}
+
+
+button
+{
+    /* button position */
+    position: relative;
+    top: 10px; left: 60px;
+    padding: 15px;
+
+    /* content alignment and color */
+    align-content: center;
+	border-radius: 20px;
+	border: 1px solid #a19f9e;
+	background-color: #3363ca;
+	color: #FFFFFF;
+
+    /* font styling */
+	font-size: 14px;
+	font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+	padding: 8px 20px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	/* transition: transform 80ms ease-in; */
+    transition: 150ms;
+}
+
+button:hover
+{
+    background-color: #a19f9ed3;
+}

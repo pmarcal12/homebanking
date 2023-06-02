@@ -1,0 +1,35 @@
+<div class = "entryContainer" id = "entryContainer">
+    <!-- Sign In Form -->
+    <div class = "formContainer logInCointainer">
+        <form action="">
+            <h2>Log In</h2>
+            <label for="userID">User ID: </label>
+            <input type="userID" id="userID" #name placeholder="User ID" required>
+            <br>
+            <br>
+            <label for="pwd">Password: </label>
+            <input type="password" id="pwd" #password placeholder="Password" required>
+            <br>
+            <button (click)="logIn(name.value, password.value)">Log In</button>
+        </form>
+    </div>
+    <!-- Sign Up Form -->
+    <div class = "formContainer signUpCointainer">
+        <form action="">
+            <h2>Create Account</h2>
+            <label for="userName">User ID: </label>
+            <input type="text" id="userName" #name placeholder="Name" required>
+            <br>
+            <br>
+            <label for="email">E-mail: </label>
+            <input type="text" id="email" #email placeholder="E-mail" required>
+            <br>
+            <br>
+            <label for="password">Password: </label>
+            <input type="password" id="password" #password placeholder="Password" required>
+            <br>
+            <button (click)="signUp(name.value, email.value, password.value)">Sign Up</button>
+        </form>
+    </div>
+
+</div>

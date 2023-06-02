@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from './user';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'homebanking';
+
+  userList: User[] =
+  [
+    {
+      name: "admin",
+      email: "admin@admin.pt",
+      password: "admin",
+      userID: 0,
+    }
+  ];
 }
