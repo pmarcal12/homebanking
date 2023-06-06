@@ -1,15 +1,16 @@
-<main>
-  
-    <header>
-        <img src="../assets/logos/bankIcon.svg" alt="Homeabking"> Homebanking pm.
-    </header>
-    
-    <body>
-      <section>
-        <app-user-list>
-  
-        </app-user-list>
-      </section>
-    </body>
+<!-- <app-top-bar></app-top-bar>
 
-</main>
+<div class = "container">
+  <router-outlet></router-outlet>
+</div> -->
+
+<app-top-bar></app-top-bar>
+
+<nav>
+  <ul>
+    <li><a routerLink="user-list-component" routerLinkActive="active" ariaCurrentWhenActive="page">First Component</a></li>
+    <li><a routerLink="main-page-component" routerLinkActive="active" ariaCurrentWhenActive="page">Second Component</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

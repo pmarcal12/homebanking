@@ -1,0 +1,117 @@
+/* Movement List Page Style */
+*
+{
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#topBar
+{
+    background-color: #c7c5c5c5;
+	border-radius: 20px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			    0 10px 10px rgba(0,0,0,0.22);
+    position: fixed;
+    top: 130px; left: 575px;
+	width: 1000px;
+    height: 40px;
+}
+
+#topBar > p
+{
+    position: fixed;
+    top: 125px; left: 1500px;
+}
+.movementContainer 
+{
+	background-color: #c7c5c5c5;
+	border-radius: 20px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			    0 10px 10px rgba(0,0,0,0.22);
+    position: fixed;
+    top: 200px; left: 575px;
+	width: 1000px;
+	max-width: 100%;
+	min-height: 750px;
+}
+
+table
+{
+    position: relative;
+    top: 50px; left: 95px;
+    width: 800px;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+.listHeader
+{
+    text-align: center;
+    border-style: solid;
+    border-bottom: #3363ca;
+}
+
+.opNumber
+{
+    text-align: left;
+}
+
+td
+{
+    text-align: center;
+}
+
+.userDataContainer
+{
+    position: fixed;
+    top: 200px; left: 200px;
+    width: 200px;
+    height: 450px;
+    max-width: 100%;
+
+    background-color: #f3ecec77;
+	border-radius: 20px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			    0 10px 10px rgba(0,0,0,0.22);
+
+    text-align: center;
+}
+
+.userIcon
+{
+    margin: 15px;
+    max-width: 140px;
+    border-radius: 50%;
+    border-color: rgb(241, 235, 235);
+    border-style: solid;
+    border-width: 5px;
+}
+
+.userDataContainer > div
+{
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgb(196, 194, 194);
+    width: 120px;
+    height: 75px;
+    position: absolute;
+    top: 320px; left: 40px;
+    background-color: #3363ca;
+    
+    color: aliceblue;
+}
+
+.userOptions
+{
+    position: absolute;
+    top: 200px; left: 22px;
+}
+.userDataContainer > div > p
+{
+    font-weight: bold;
+    color: aliceblue;
+    position: relative;
+    top: -5px;
+    
+}
