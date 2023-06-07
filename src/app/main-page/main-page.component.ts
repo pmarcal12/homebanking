@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { User, users } from '../user';
+import { User, } from '../user';
 import { Movements } from '../movements';
 
-import { MovementService } from '../movement.service';
+
 
 
 @Component({
@@ -20,11 +20,12 @@ export class MainPageComponent implements OnInit
 
   
 
-  constructor(private route: ActivatedRoute, private movementService: MovementService){}
+  constructor(private route: ActivatedRoute){}
 
   ngOnInit()
   {
-    this.loggedInUser = history.state.user;
+    // transports the data of the loggedInUser from log in screen to the main page
+    this.loggedInUser = history.state.user;   
     this.route.paramMap.subscribe((params) => {
       const user = history.state.user;
       if (user) {
@@ -33,6 +34,7 @@ export class MainPageComponent implements OnInit
     });      
   }
 
+  // User Container button actions
   deposit()
   {
     if (this.loggedInUser) {

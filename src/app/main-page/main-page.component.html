@@ -1,12 +1,7 @@
 <!-- Main Page User Interface -->
 
       <!-- Movement List Containter -->
-        <!-- add later -->
-      <!-- <div id ="topBar">
-        <p>filter</p>
-    </div> -->
 
-    <!-- <div class = "movementContainer" *ngFor="let user of users | async"> -->
     <!-- Movement containter is the center element of the page, a container which the function is only display the information stored on the movements array of the logged user -->
     <div class = "movementContainer" >
         <table class="movement-list">
@@ -37,7 +32,7 @@
     <div class = "userDataContainer">
         <img src="../assets/logos/userAvatar.jpg" class = "userIcon">
         
-        <!-- Apresenta o nome do utilizador que tem a sessão ativa -->
+        <!-- Presenting user name of the logged user -->
 
         <a class="userName">{{ loggedInUser?.name | uppercase}}</a>
         
@@ -51,7 +46,6 @@
 
         <div class = "Balance">
             <p> Balance </p>
-            <!-- <p> 5 €</p> -->
             <p> {{loggedInUser?.userBalance | currency:'EUR' }}</p>
         </div>
     </div>
