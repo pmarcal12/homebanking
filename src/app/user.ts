@@ -1,15 +1,21 @@
+import { Movements } from "./movements";
+
 export interface User
 {
     name: string,
     // email: string,
     password: string,
-    userID: number
+    userID: number,
+    userBalance: number
+    userMovs: Movements[]
 }
 
-export const users = [
+export const users: User[]= [
     {
         name: 'admin',
         password: 'admin',
-        userID: 0
+        userID: 0,
+        userBalance: 100,
+        userMovs: []
     }
 ];

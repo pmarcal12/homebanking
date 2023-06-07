@@ -95,16 +95,22 @@ td
     color: aliceblue;
 }
 
+.userName
+{
+    font-weight: bold;
+    font-size: 14pt;
+}
+
 .userOptions
 {
     position: absolute;
-    top: 200px; left: 22px;
+    top: 190px; left: 22px;
 }
+
 .userDataContainer > div > p
 {
     font-weight: bold;
     color: aliceblue;
     position: relative;
-    top: -5px;
-    
+    top: -5px; 
 }

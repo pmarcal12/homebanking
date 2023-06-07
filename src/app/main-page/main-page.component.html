@@ -1,9 +1,10 @@
 <!-- Main Page User Interface -->
 
       <!-- Movement List Containter -->
-    <div id ="topBar">
+        <!-- add later -->
+      <!-- <div id ="topBar">
         <p>filter</p>
-    </div>
+    </div> -->
 
     <div class = "movementContainer">
         <table class="movement-list">
@@ -27,22 +28,24 @@
         </table>
     </div>
     
-    <!-- <div class = "userDataContainer" *ngFor = "let user of users"> -->
     <div class = "userDataContainer">
         <img src="../assets/logos/userAvatar.jpg" class = "userIcon">
         <!-- <p>user name</p> -->
         <!-- <p [title]="product.name + ' details'">{{user.name}}</p> -->
+        <!-- <a [title]="user.name + ' details'" class = "userName"> {{user.name}} </a> -->
+
+        <a [title]="'details'" class = "userName"> user name </a>
         
-        <!-- <a [title]="user.name + ' details'"> {{user.name}} </a> -->
-        <a [title]="'details'"> user name </a>
-        
-        <ul>
-          <p><a [title]="">Deposit</a></p>
-          <p><a [title]="">Withdraw</a></p>
+        <ul class = "userOptions">
+          <a (click)="openDepositDialog()">Deposit</a>
+          <br>
+          <br>
+          <a openWithdrawDialog()>Withdraw</a>
         </ul>
 
         <div class = "Balance">
             <p> Balance </p>
             <p> 5 €</p>
+            <!-- <p> {{user.userBalance | currency}}</p> -->
         </div>
     </div>

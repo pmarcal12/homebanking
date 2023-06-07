@@ -1,36 +1,39 @@
 <div class = "entryContainer" id = "entryContainer">
-    <!-- Sign In Form -->
+    <!-- Log In Form -->
     <div class = "formContainer logInCointainer">
-        <form action="">
+        <!-- <form (ngSubmit)="logIn(loginForm.value.name, loginForm.value.password)"> -->
+        <form (ngSubmit)="logIn()" [formGroup]="loginForm">
             <h2>Log In</h2>
-            <label for="userID">User ID: </label>
-            <input type="userID" id="userID" #name placeholder="User ID" required>
+            <label for="login-name">User ID: </label>
+            <input type="text" id="login-name" formControlName="name" placeholder="User ID" required>
             <br>
             <br>
-            <label for="pwd">Password: </label>
-            <input type="password" id="pwd" #password placeholder="Password" required>
+            <label for="login-password">Password: </label>
+            <input type="password" id="login-password" formControlName="password" placeholder="Password" required>
             <br>
-            <button [routerLink]="['/main-page-component']" (click)="logIn(name.value, password.value)">Log In</button>
+            <button type="submit">Log In</button>
+            <!-- <button [routerLink]="['/main-page-component']" (click)="logIn(name.value, password.value)">Log In</button> -->
+            
             <!-- <button routerLink="main-page-component" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="logIn(name.value, password.value)">Log In</button> -->
+            <!-- <button [routerLink]="['/main-page-component']" type="submit">Log In</button> -->
+            <!-- <button  type="submit">Log In</button> -->
         </form>
     </div>
     <!-- Sign Up Form -->
     <div class = "formContainer signUpCointainer">
-        <form action="">
+        <!-- <form (ngSubmit)="signUp(signupForm.value.name, signupForm.value.password)"> -->
+        <form (ngSubmit)="signUp()" [formGroup]="signupForm">
             <h2>Create Account</h2>
-            <label for="userName">User ID: </label>
-            <input type="text" id="userName" #name placeholder="Name" required>
-            <!-- <br>
-            <br>
-            <label for="email">E-mail: </label>
-            <input type="text" id="email" #email placeholder="E-mail" required> -->
+            <label for="signup-name">User ID: </label>
+            <input type="text" id="signup-name" formControlName="name" placeholder="Name" required>
             <br>
             <br>
-            <label for="password">Password: </label>
-            <input type="password" id="password" #password placeholder="Password" required>
+            <label for="signup-password">Password: </label>
+            <input type="password" id="signup-password" formControlName="password" placeholder="Password" required>
             <br>
             <!-- <button (click)="signUp(name.value, email.value, password.value)">Sign Up</button> -->
-            <button (click)="signUp(name.value, password.value)">Sign Up</button>
+            <!-- <button (click)="signUp(name.value, password.value)" [routerLink]="['/user-list-component']" >Sign Up</button> -->
+            <button type="submit">Sign Up</button>
         </form>
     </div>
 
