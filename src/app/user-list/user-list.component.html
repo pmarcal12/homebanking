@@ -1,8 +1,43 @@
 <div class = "entryContainer" id = "entryContainer">
     <!-- Log In Form -->
     <div class = "formContainer logInCointainer">
+        <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+            <h2>Log In</h2>
+            <label for="login-name">User ID:</label>
+            <input type="text" id="login-name" formControlName="name" placeholder="User ID" required>
+            <br>
+            <br>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" formControlName="password" placeholder="Password" required>
+            <br>
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+    <!-- Sign Up Form -->
+    <div class="formContainer signUpCointainer">
+        <form (ngSubmit)="signUp()" [formGroup]="signupForm">
+          <h2>Create Account</h2>
+          <label for="signup-name">User ID:</label>
+          <input type="text" id="signup-name" formControlName="name" placeholder="Name" required>
+          <br><br>
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" formControlName="password" placeholder="Password" required>
+          <br>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+
+</div>
+
+
+
+
+
+<!-- <div class = "entryContainer" id = "entryContainer"> -->
+    <!-- Log In Form -->
+    <!-- <div class = "formContainer logInCointainer"> -->
         <!-- <form (ngSubmit)="logIn(loginForm.value.name, loginForm.value.password)"> -->
-        <form (ngSubmit)="logIn()" [formGroup]="loginForm">
+        <!-- <form (ngSubmit)="logIn()" [formGroup]="loginForm">
             <h2>Log In</h2>
             <label for="login-name">User ID: </label>
             <input type="text" id="login-name" formControlName="name" placeholder="User ID" required>
@@ -11,18 +46,18 @@
             <label for="login-password">Password: </label>
             <input type="password" id="login-password" formControlName="password" placeholder="Password" required>
             <br>
-            <button type="submit">Log In</button>
+            <button type="submit">Log In</button> -->
             <!-- <button [routerLink]="['/main-page-component']" (click)="logIn(name.value, password.value)">Log In</button> -->
             
             <!-- <button routerLink="main-page-component" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="logIn(name.value, password.value)">Log In</button> -->
             <!-- <button [routerLink]="['/main-page-component']" type="submit">Log In</button> -->
             <!-- <button  type="submit">Log In</button> -->
-        </form>
-    </div>
+        <!-- </form>
+    </div> -->
     <!-- Sign Up Form -->
-    <div class = "formContainer signUpCointainer">
+    <!-- <div class = "formContainer signUpCointainer"> -->
         <!-- <form (ngSubmit)="signUp(signupForm.value.name, signupForm.value.password)"> -->
-        <form (ngSubmit)="signUp()" [formGroup]="signupForm">
+        <!-- <form (ngSubmit)="signUp()" [formGroup]="signupForm">
             <h2>Create Account</h2>
             <label for="signup-name">User ID: </label>
             <input type="text" id="signup-name" formControlName="name" placeholder="Name" required>
@@ -30,11 +65,11 @@
             <br>
             <label for="signup-password">Password: </label>
             <input type="password" id="signup-password" formControlName="password" placeholder="Password" required>
-            <br>
+            <br> -->
             <!-- <button (click)="signUp(name.value, email.value, password.value)">Sign Up</button> -->
             <!-- <button (click)="signUp(name.value, password.value)" [routerLink]="['/user-list-component']" >Sign Up</button> -->
-            <button type="submit">Sign Up</button>
+            <!-- <button type="submit">Sign Up</button>
         </form>
     </div>
 
-</div>
+</div> -->

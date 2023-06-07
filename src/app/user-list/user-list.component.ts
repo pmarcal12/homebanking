@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras} from '@angular/router';
 
 import { User, users } from '../user';
 import { Movements } from '../movements';
@@ -21,19 +21,16 @@ export class UserListComponent {
   loginForm!: FormGroup;
   signupForm!: FormGroup;
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private formBuilder: FormBuilder)
+  {
     this.loginForm = this.formBuilder.group({
-      loginGroup: this.formBuilder.group({
-        name: ['', Validators.required],
-        password: ['', Validators.required]
-      })
+      name: ['', Validators.required], // 'name' form control with initial empty value and required validator
+      password: ['', Validators.required] // 'password' form control with initial empty value and required validator
     });
-  
+ 
     this.signupForm = this.formBuilder.group({
-      signupGroup: this.formBuilder.group({
-        name: ['', Validators.required],
-        password: ['', Validators.required]
-      })
+      name: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
@@ -45,9 +42,9 @@ export class UserListComponent {
 
     
 
-    const newUser: User = { name: name, password: password, userID: this.users.length + 1, userBalance: 0, userMovs: []};
+    const newUser: User = { name: name, password: password, userID: this.users.length + 1, userBalance: 100, userMovs: []};
 
-    const newMovement: Movements = {movNumber: newUser.userMovs.length+1, movType: 'Deposit', movDate: new Date(), movAmount: 100};
+    const newMovement: Movements = {movNumber: newUser.userMovs.length, movType: 'Deposit', movDate: new Date(), movAmount: 100};
 
     
 
@@ -55,11 +52,6 @@ export class UserListComponent {
     this.users.push(newUser);
 
     window.alert(users.length + " " + newUser.name + " " + newUser.password + " " + newUser.userMovs[0].movAmount + " " + newUser.userMovs[0].movType);
-    // for(let i = 0; i < users.length; i++)
-    // {
-    //   window.alert(users[i].name + " " + users[i].userBalance + " " + users[i].);
-      
-    // }
 
   }
 
@@ -73,9 +65,16 @@ export class UserListComponent {
 
     if (user) {
       this.loggedInUser = user;
-      this.router.navigate(['/main-page-component']);
+      console.log("Logged");
+
+      const navigationExtras: NavigationExtras = {
+        state: { user: this.loggedInUser }
+      };
+
+      this.router.navigate(['/main-page-component'], navigationExtras);
     } else {
       alert('Nome de usuário ou senha inválidos.');
     }
+    
   }
 }

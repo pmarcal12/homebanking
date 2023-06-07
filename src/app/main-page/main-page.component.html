@@ -6,7 +6,9 @@
         <p>filter</p>
     </div> -->
 
-    <div class = "movementContainer">
+    <!-- <div class = "movementContainer" *ngFor="let user of users | async"> -->
+    <!-- Movement containter is the center element of the page, a container which the function is only display the information stored on the movements array of the logged user -->
+    <div class = "movementContainer" >
         <table class="movement-list">
           <thead class = "listHeader">
             <tr  colspan="4">Movements List</tr>
@@ -18,34 +20,38 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class = "opNumber">1</td>
-              <td class = "opType">Deposit</td>
-              <td class = "opDate">02/06/2023</td>
-              <td class = "opAmount"> 5€</td>
+            <!-- Run the movements list of the logged user and presents the movements from that account -->
+            <tr *ngFor="let movement of loggedInUser?.userMovs">
+              <td class="opNumber">{{ movement.movNumber }}</td>
+              <td class="opType">{{ movement.movType }}</td>
+              <td class="opDate">{{ movement.movDate | date:'dd/MM/yyyy' }}</td>
+              <td class="opAmount">{{ movement.movAmount | currency:'EUR' }}</td>
             </tr>
+
           </tbody>
         </table>
     </div>
     
+    <!-- User Data containter is the left element of the page, a container which the function is display user informations (name and accont balance -->
+    <!-- an also perform operations - deposit and withdraw money -->
     <div class = "userDataContainer">
         <img src="../assets/logos/userAvatar.jpg" class = "userIcon">
-        <!-- <p>user name</p> -->
-        <!-- <p [title]="product.name + ' details'">{{user.name}}</p> -->
-        <!-- <a [title]="user.name + ' details'" class = "userName"> {{user.name}} </a> -->
+        
+        <!-- Apresenta o nome do utilizador que tem a sessão ativa -->
 
-        <a [title]="'details'" class = "userName"> user name </a>
+        <a class="userName">{{ loggedInUser?.name | uppercase}}</a>
+        
         
         <ul class = "userOptions">
-          <a (click)="openDepositDialog()">Deposit</a>
+          <button (click)="deposit()">Deposit</button>
           <br>
           <br>
-          <a openWithdrawDialog()>Withdraw</a>
+          <button  (click)="withdraw()">Withdraw</button>
         </ul>
 
         <div class = "Balance">
             <p> Balance </p>
-            <p> 5 €</p>
-            <!-- <p> {{user.userBalance | currency}}</p> -->
+            <!-- <p> 5 €</p> -->
+            <p> {{loggedInUser?.userBalance | currency:'EUR' }}</p>
         </div>
     </div>
